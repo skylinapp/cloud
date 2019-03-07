@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config-server
+      profile: dev
+      name: config-client
+      label: master
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: skylin
+    password: 123456
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka
